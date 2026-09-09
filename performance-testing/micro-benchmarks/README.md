@@ -45,6 +45,7 @@ allocation profiling, `-rf json -rff out.json` for machine-readable results,
 | `FixedSizeListFallbackBenchmark` | Detector cost on almost-fixed-width pages that fall back | `generate_fixed_size_list_data.py` |
 | `nested/NestedListReadBenchmark` | `LIST<primitive>` reads across element types and null densities vs. a flat floor | self-generating (`NestedListFileGenerator`) |
 | `nested/NestedMultiListReadBenchmark` | Multi-list-column schema effects on the nested read path | self-generating (`NestedListFileGenerator`) |
+| `nested/NestedLogicalTypeReadBenchmark` | Typed (`dates()`, `timestamps()`, `decimals()`) vs. generic `values()` element reads over a `LIST<annotated>`, across element types and null densities | self-generating (`NestedLogicalTypeFileGenerator`) |
 | `mixed/MixedSchemaReadBenchmark` | Schema-composition effects (scalars next to lists, structs, depth) on the nested path (#732) | self-generating (`MixedSchemaFileGenerator`) |
 | `wide/WideSchemaMetadataBenchmark` | Footer decode, schema build and `open()` for 10 … 100,000 `FLOAT64` columns (#919) | self-generating (`WideSchemaFileGenerator`) |
 | `wide/WideSchemaMetadataParquetJavaBenchmark` | The same three steps through parquet-java, over the same fixtures | self-generating (`WideSchemaFileGenerator`) |
